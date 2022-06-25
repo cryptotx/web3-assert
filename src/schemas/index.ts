@@ -10,8 +10,9 @@ import * as numberSchema from './base/number_schema.json';
 import * as tokenSchema from './base/token_schema.json';
 import * as txDataSchema from './block/tx_data_schema.json';
 import * as wholeNumberSchema from './base/whole_number_schema.json';
+import {ValidationError, ValidatorResult} from "jsonschema";
 
-export default {
+const schemas = {
     numberSchema,
     addressSchema,
     callDataSchema,
@@ -24,4 +25,20 @@ export default {
     jsNumber,
     txDataSchema,
     wholeNumberSchema,
-};
+}
+// const scheamsKey = Object.keys(schemas)
+type scheamsType = keyof typeof schemas
+
+// interface IValidator {
+//     (value: any): ValidatorResult
+// }
+
+// Validate
+export interface IValidator {
+    (value: any): ValidatorResult;
+
+    errors?: ValidationError[];
+}
+
+export type ScheamsAssert = Record<scheamsType, IValidator>
+export {schemas}

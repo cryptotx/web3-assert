@@ -1,0 +1,23 @@
+{
+  "name": "web3-assert",
+  "version": "1.0.1",
+  "description": "Web3 assertion tool",
+  "main": "lib/index.js",
+  "type": "lib/index.d.ts",
+  "author": "Web3 Project Developers",
+  "scripts": {
+    "release": "tsc && npm publish && git tag $npm_package_version && git push --tag",
+    "dev:tsc": "tsc -w -p tsconfig.json",
+    "link": "sudo npm link web3-assert"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.182",
+    "lodash": "^4.17.21",
+    "jsonschema": "^1.4.1"
+  },
+  "devDependencies": {
+    "ts-node": "~10.7.0",
+    "typescript": "~4.6.4"
+  },
+  "watch": "tsc --watch"
+}

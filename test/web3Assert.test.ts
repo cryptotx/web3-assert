@@ -1,23 +1,23 @@
 import {Web3Assert} from "../src/index";
-import schemas from "../src/schemas";
 import {validateOrder} from "./schemas";
 import {order721} from "./data/orders";
+import {schemas} from "../src/schemas";
+import {AssertInfo} from "../src/utils/assert";
 
-if(!validateOrder(order721).valid) console.log(validateOrder.errors)
 
-const assert = new Web3Assert()
+if (!validateOrder(order721).valid) console.log(validateOrder.errors)
+
+const web3Assert = new Web3Assert()
+const assert = web3Assert.getValidator()
+const oo1 = assert.addressSchema("")
+console.log(oo1.valid)
 const DOMAIN_DEFAULT = {
     name: 'ZeroEx',
     chainId: 1,
     verifyingContract: '0x0000000000000000000000000000000000000000',
     version: '1.0.0',
 };
-// @ts-ignore
 const eipAsset = assert.eip712DomainSchema(DOMAIN_DEFAULT)
-
-// const oo = eipAsset(DOMAIN_DEFAULT)
-
-console.log(eipAsset)
 if (!eipAsset.valid) console.log(eipAsset.errors)
 // console.log(oo.valid,oo.errors)
 
