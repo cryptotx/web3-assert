@@ -5,7 +5,7 @@ const HEX_REGEX = /^0x[0-9A-F]*$/i
 
 const BYTE32_HEX_REGEX = / ^ 0x（[A-Fa-f0-9] {64}）$ /
 
-const ADDRESS_HEX_REGEX = / ^ 0x[0-9a-fA-F] {40} $ /
+const ADDRESS_HEX_REGEX = /^(0x)?[0-9a-fA-F]{40}$/
 
 export type AssertInfo = { value: any, variableName?: string }
 export const web3BaseAssert = {
