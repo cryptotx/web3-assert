@@ -1,6 +1,6 @@
 {
   "name": "web3-assert",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Web3 assertion tool",
   "main": "lib/index.js",
   "type": "lib/index.d.ts",
@@ -16,8 +16,8 @@
     "jsonschema": "^1.4.1"
   },
   "devDependencies": {
-    "ts-node": "~10.7.0",
-    "typescript": "~4.6.4"
+    "ts-node": "10.7.0",
+    "typescript": "4.8.2"
   },
   "watch": "tsc --watch"
 }
